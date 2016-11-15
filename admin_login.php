@@ -40,11 +40,16 @@ include_once 'header.php';
 
 <?php
 
-if (isset($_POST['admin_login'])) {
+if (isset($_POST['admin_login']) && $_POST['admin_login'] == 'Login') {
+    echo "<pre>";
+    print_r($_POST);
+    echo "</pre>";
     $email = $_POST['email'];
     $password = $_POST['password'];
     $result = validate_login($email, $password, 'admin');
     if ($result !== true) {
         header('Location:admin_login.php?error='.urlencode($result));
+    } else {
+        header('Location:dashboard.php');
     }
 }

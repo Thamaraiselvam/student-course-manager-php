@@ -1,6 +1,7 @@
 <?php 
 include_once 'header.php';
 include_once 'admin_menu.php';
+// var_dump($_SESSION);
 ?>
         <div id="page-wrapper">
             <div class="row">
