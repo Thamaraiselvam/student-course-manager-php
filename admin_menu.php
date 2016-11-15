@@ -28,7 +28,7 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Students<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="add_new_student.php">Add New</a>
+                                    <a href="add_new_student.php">Add</a>
                                 </li>
                                 <li>
                                     <a href="view_student.php">View</a>
@@ -44,16 +44,16 @@
                             <a href="#"><i class="fa fa-table fa-fw"></i> Course<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="add_course.php">Add New</a>
+                                    <a href="add_course.php">Add</a>
                                 </li>
                                 <li>
                                     <a href="view_course.php">View</a>
                                 </li>
-                                <li>
-                                    <a href="edit_course.php">Edit</a>
-                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="logout.php"><i class="fa fa-logout fa-fw"></i> Logout</a>
                         </li>
                        
                     </ul>

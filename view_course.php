@@ -83,3 +83,7 @@ include_once 'admin_menu.php';
         <!-- /#page-wrapper -->
 
     </div>
+
+<?php 
+include_once 'footer.php';
+?>

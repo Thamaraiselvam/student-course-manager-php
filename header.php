@@ -13,7 +13,8 @@
     <title>Student management</title>
     <!-- Bootstrap Core CSS -->
 <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Latest compiled and minified JavaScript -->
     <!-- MetisMenu CSS -->

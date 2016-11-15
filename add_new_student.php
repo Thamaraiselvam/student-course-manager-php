@@ -17,7 +17,7 @@ include_once 'admin_menu.php';
                               <br>
                                 <!-- /.col-lg-6 (nested) -->
                                 <div class="col-lg-6">
-                                    <h3>Register new student</h3>
+                                    <h4>Register new student</h4>
                                     <form role="form" method="post" action="#">
                                         <div class="form-group ">
                                             <input type="text" class="form-control" required="required" name="email" placeholder="email">
@@ -32,11 +32,11 @@ include_once 'admin_menu.php';
                                          <div class="form-group ">
                                             <input type="text" class="form-control" required="required" name="reg_no" placeholder="Register Number">
                                         </div>
-                                         <div class="form-group ">
-		                                            <input type="text" class="form-control" required="required" name="address" placeholder="Address">
+                                         <div class="form-group">
+                                                    <textarea class="form-control" name="address" rows="3" placeholder="Address"></textarea>
                                         </div>
                                         <div class="form-group ">
-                                        <input class="btn  btn-primary btn-block" type="submit" name="add_student" value="Login">
+                                        <input class="btn  btn-primary btn-block" type="submit" name="add_student" value="Add">
                                         </div>
                                     
                                     </form>

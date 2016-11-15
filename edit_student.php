@@ -28,23 +28,23 @@ if ($_GET['id']) {
                                 <div class="col-lg-6">
                                     <h3>Register new student</h3>
                                     <form role="form" method="post" action="#">
-                                        <div class="form-group input-group">
-                                            <input type="text" class="form-control" value="<?php echo $result['email']?>" required="required" name="email" placeholder="email">
+                                        <div class="form-group ">
+                                            <input type="text" class="form-control" value="<?php echo isset($_POST['email']) ? $_POST['email'] : $result['email'];?>" required="required" name="email" placeholder="email">
                                         </div>
-                                         <div class="form-group input-group">
-                                            <input type="text" class="form-control" value="<?php echo $result['fullname']?>" required="required" name="fullname" placeholder="Fullname">
+                                         <div class="form-group ">
+                                            <input type="text" class="form-control" value="<?php echo isset($_POST['fullname']) ? $_POST['fullname'] : $result['fullname'];?>"  required="required" name="fullname" placeholder="Fullname">
                                         </div>
 <!-- 
-                                         <div class="form-group input-group">
+                                         <div class="form-group ">
                                             <input type="password" class="form-control"  required="required" name="password" placeholder="Password">
                                         </div> -->
-                                         <div class="form-group input-group">
-                                            <input type="text" class="form-control" value="<?php echo $result['reg_no']?>" required="required" name="reg_no" placeholder="Register Number">
+                                         <div class="form-group ">
+                                            <input type="text" class="form-control" value="<?php echo isset($_POST['reg_no']) ? $_POST['reg_no'] : $result['reg_no'];?>" required="required" name="reg_no" placeholder="Register Number">
                                         </div>
-                                         <div class="form-group input-group">
-		                                            <input type="text" class="form-control" value="<?php echo $result['address']?>" required="required" name="address" placeholder="Address">
+                                        <div class="form-group">
+                                                    <textarea class="form-control" name="address" rows="3" placeholder="Address"><?php if(isset($_POST['address'])) echo $_POST['address']; else  echo $result['address'];?></textarea>
                                         </div>
-                                        <div class="form-group input-group">
+                                        <div class="form-group ">
                                         <input class="btn  btn-primary btn-block" type="submit" name="edit_student" value="Save Changes">
                                         </div>
                                     
@@ -56,15 +56,7 @@ if (isset($_POST['edit_student'])) {
     $reg_no = $_POST['reg_no'];
     $address = $_POST['address'];
     $result = edit_student($result['id'], $email, $fullname, $reg_no, $address);
-    // if ($result !== true) {
-    ?>
-<script type="text/javascript">
-    // setTimeout(function(){ window.location.reload();},1000);
-
-   </script>
-    <?php
-    // }
-    // echo "New Student created !";
+    echo "<div style='color:green'>Changes saved !</div>";
 } ?>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
@@ -82,3 +74,7 @@ if (isset($_POST['edit_student'])) {
         <!-- /#page-wrapper -->
 
     </div>
+
+<?php 
+include_once 'footer.php';
+?>

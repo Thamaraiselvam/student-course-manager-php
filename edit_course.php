@@ -136,3 +136,7 @@ if (isset($_POST['edit_course'])) {
 
     </div>
 
+
+<?php 
+include_once 'footer.php';
+?>

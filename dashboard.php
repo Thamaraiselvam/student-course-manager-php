@@ -1,5 +1,5 @@
 <?php 
-include_once 'header.php';
+    include_once 'header.php';
 include_once 'admin_menu.php';
 // var_dump($_SESSION);
 ?>
@@ -210,7 +210,7 @@ include_once 'admin_menu.php';
     </div>
 
 
-<?php 
-include_once 'pages/footer.php';
-?>
 
+<?php 
+include_once 'footer.php';
+?>
