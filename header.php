@@ -9,7 +9,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <?php  require './config.php'; ?>
     <title>Student management</title>
     <!-- Bootstrap Core CSS -->
 <!-- Latest compiled and minified CSS -->

@@ -1,11 +1,10 @@
 <?php
 require 'config.php';
-if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'admin') {
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'student') {
     header('Location:index.php');
 };
-
 include_once 'header.php';
-include_once 'admin_menu.php';
+include_once 'student_menu.php';
 // var_dump($_SESSION);
 ?>
         <div id="page-wrapper">
@@ -20,12 +19,12 @@ include_once 'admin_menu.php';
                                     <i class="fa fa-book fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Students</div>
-                                    <div><?php echo get_students_count(); ?> Registered</div>
+                                    <div class="huge">Spring</div>
+                                    <div><?php echo get_enrolled_courses_count('spring'); ?> Enrollments</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="view_student.php">
+                        <a href="enroll_course.php?sem=spring">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -43,12 +42,12 @@ include_once 'admin_menu.php';
                                     <i class="fa fa-book fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Courses</div>
-                                    <div><?php echo get_courses_count(); ?> Available</div>
+                                    <div class="huge">Summer</div>
+                                    <div><?php echo get_enrolled_courses_count('summer'); ?> Enrollments</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="view_course.php">
+                        <a href="enroll_course.php?sem=summer">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -58,6 +57,28 @@ include_once 'admin_menu.php';
                     </div>
                 </div>
 
+                    <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-book fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">Fall</div>
+                                    <div><?php echo get_enrolled_courses_count('fall'); ?> Enrollments</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="enroll_course.php?sem=fall">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
                 <!-- /.col-lg-12 -->
         </div>
         <!-- /#page-wrapper -->
@@ -65,6 +86,7 @@ include_once 'admin_menu.php';
     </div>
 
 
-<?php
+
+<?php 
 include_once 'footer.php';
 ?>

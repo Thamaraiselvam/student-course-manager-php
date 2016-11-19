@@ -42,7 +42,7 @@ include_once 'header.php';
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <p class="intro-text">Manage your schedules and courses</p>
+                        <p class="intro-text">Enroll courses now !!</p>
                         <a href="student_login.php" class="btn btn-circle page-scroll">
                             <i class="fa  fa-sign-in animated"></i>
                         </a>

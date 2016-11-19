@@ -1,9 +1,13 @@
-<?php 
-include_once 'header.php';
+<?php
+require 'config.php';
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'admin') {
+    header('Location:index.php');
+};
 include_once 'admin_menu.php';
+include_once 'header.php';
 ?>
    <div id="page-wrapper">
-                
+
             <!-- /.row -->
             <div class="row">
             <br>
@@ -14,7 +18,7 @@ include_once 'admin_menu.php';
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                              
+
                                 <!-- /.col-lg-6 (nested) -->
                                 <div class="col-lg-6">
                                     <h3>Add new course</h3>
@@ -77,7 +81,7 @@ include_once 'admin_menu.php';
                                         <div class="form-group">
                                         <input class="btn  btn-primary btn-block" type="submit" name="add_course" value="Add ">
                                         </div>
-                                    
+
                                     </form>
                                     <?php
 if (isset($_POST['add_course'])) {
@@ -113,6 +117,6 @@ if (isset($_POST['add_course'])) {
 
     </div>
 
-<?php 
+<?php
 include_once 'footer.php';
 ?>

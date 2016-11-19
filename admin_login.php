@@ -1,4 +1,5 @@
-<?php 
+<?php
+require 'config.php';
 include_once 'header.php';
 ?>
 <body>
@@ -23,10 +24,8 @@ include_once 'header.php';
                                         <div class="form-group" style="color:red">
                                             <?php echo $_GET['error']; ?>
                                         </div>
-                                    
+
                                 <?php } ?>
-                                    
-                          
                                 <!-- Change this to a button or input when using this as a form -->
                                 <input class="btn btn-lg btn-success btn-block" type="submit" name="admin_login" value="Login">
                             </fieldset>

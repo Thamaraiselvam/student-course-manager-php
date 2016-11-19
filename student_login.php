@@ -1,4 +1,5 @@
-<?php 
+<?php
+require 'config.php';
 include_once 'header.php';
 ?>
 <body>
@@ -46,5 +47,7 @@ if (isset($_POST['student_login'])) {
     $result = validate_login($email, $password, 'student');
     if ($result !== true) {
         header('Location:student_login.php?error='.urlencode($result));
+    } else {
+        header('Location:student_dashboard.php');
     }
 }

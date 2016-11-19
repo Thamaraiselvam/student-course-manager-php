@@ -11,13 +11,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="dashboard.php">Dashboard</a>
+                <a class="navbar-brand" href="dashboard.php">Welcome Admin</a>
             </div>
-            <!-- /.navbar-header -->
-
-      
-            <!-- /.navbar-top-links -->
-
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -39,7 +34,6 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        
                         <li>
                             <a href="#"><i class="fa fa-table fa-fw"></i> Course<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -55,7 +49,6 @@
                         <li>
                             <a href="logout.php"><i class="fa fa-logout fa-fw"></i> Logout</a>
                         </li>
-                       
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
