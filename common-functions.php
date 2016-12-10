@@ -67,6 +67,7 @@ function get_student($id){
 	    	$users['email'] = $row["email"];
 	    	$users['reg_no'] = $row["reg_no"];
 	    	$users['address'] = $row["address"];
+	    	$users['phone_number'] = $row["phone_number"];
 	    }
 	} else {
 	    return 'No students found';
@@ -120,12 +121,21 @@ function delete_course($id){
 
 function edit_student( $id, $email, $fullname, $reg_no, $address){
 	global $con;
-	$sql = "UPDATE `users` SET
-`email` = '".$email."',
-`fullname` = '".$fullname."',
-`address` = '".$address."',
-`reg_no` = '".$reg_no."'
-WHERE `id` = ".$id.";";
+	if ($_SESSION['user_type'] == 'admin' ) {
+			$sql = "UPDATE `users` SET
+		`email` = '".$email."',
+		`fullname` = '".$fullname."',
+		`address` = '".$address."',
+		`reg_no` = '".$reg_no."'
+		WHERE `id` = ".$id.";";
+	} else {
+		$sql = "UPDATE `users` SET
+		`email` = '".$email."',
+		`fullname` = '".$fullname."',
+		`address` = '".$address."',
+		`phone_number` = '".$reg_no."'
+		WHERE `id` = ".$id.";";
+	}
 	$result = $con->query($sql);
 	
 }

@@ -1,15 +1,17 @@
 <?php
 require 'config.php';
-if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'admin') {
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'student') {
     header('Location:index.php');
 };
 include_once 'header.php';
-include_once 'admin_menu.php';
+include_once 'student_menu.php';
+
+$result = get_student($_SESSION['user_id']);
+
 ?>
    <div id="page-wrapper">
                 
             <!-- /.row -->
-            <br>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
@@ -18,44 +20,40 @@ include_once 'admin_menu.php';
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                              <br>
+                              
                                 <!-- /.col-lg-6 (nested) -->
                                 <div class="col-lg-6">
-                                    <h4>Register new student</h4>
+                                    <h3>Edit details</h3>
                                     <form role="form" method="post" action="#">
                                         <div class="form-group ">
-                                            <input type="text" class="form-control" required="required" name="email" placeholder="email">
+                                            <input type="text" class="form-control" value="<?php echo isset($_POST['email']) ? $_POST['email'] : $result['email'];?>" required="required" name="email" placeholder="email">
                                         </div>
                                          <div class="form-group ">
-                                            <input type="text" class="form-control" required="required" name="fullname" placeholder="Fullname">
+                                            <input type="text" class="form-control" value="<?php echo isset($_POST['fullname']) ? $_POST['fullname'] : $result['fullname'];?>"  required="required" name="fullname" placeholder="Fullname">
                                         </div>
-
+<!-- 
                                          <div class="form-group ">
-                                            <input type="password" class="form-control" required="required" name="password" placeholder="Password">
-                                        </div>
+                                            <input type="password" class="form-control"  required="required" name="password" placeholder="Password">
+                                        </div> -->
                                          <div class="form-group ">
-                                            <input type="text" class="form-control" required="required" name="reg_no" placeholder="Register Number">
+                                            <input type="text" class="form-control" value="<?php echo isset($_POST['phone_number']) ? $_POST['phone_number'] : $result['phone_number'] ?>" required="required" name="phone_number" placeholder="Phone number">
                                         </div>
-                                         <div class="form-group">
-                                                    <textarea class="form-control" name="address" rows="3" placeholder="Address"></textarea>
+                                        <div class="form-group">
+                                                    <textarea class="form-control" name="address" rows="3" placeholder="Address"><?php if(isset($_POST['address'])) echo $_POST['address']; else  echo $result['address'];?></textarea>
                                         </div>
                                         <div class="form-group ">
-                                        <input class="btn  btn-primary btn-block" type="submit" name="add_student" value="Add">
+                                        <input class="btn  btn-primary btn-block" type="submit" name="edit_student_profile" value="Save Changes">
                                         </div>
                                     
                                     </form>
                                     <?php
-if (isset($_POST['add_student'])) {
+if (isset($_POST['edit_student_profile'])) {
     $email = $_POST['email'];
     $fullname = $_POST['fullname'];
-    $password = $_POST['password'];
-    $reg_no = $_POST['reg_no'];
+    $phone_number = $_POST['phone_number'];
     $address = $_POST['address'];
-    $result = add_new_student($email, $fullname, $password, $reg_no, $address);
-    if ($result !== true) {
-        header('Location:add_new_student.php?error='.urlencode($result));
-    }
-    echo "New Student created !";
+    $result = edit_student($result['id'], $email, $fullname, $phone_number, $address);
+    echo "<div style='color:green'>Changes saved !</div>";
 } ?>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
@@ -73,6 +71,7 @@ if (isset($_POST['add_student'])) {
         <!-- /#page-wrapper -->
 
     </div>
+
 <?php 
 include_once 'footer.php';
 ?>

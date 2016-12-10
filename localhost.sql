@@ -76,7 +76,13 @@ INSERT INTO `enrolled_courses` (`id`, `user_id`, `course_id`, `sem_type`) VALUES
 (97,	9,	15,	'fall'),
 (98,	9,	16,	'fall'),
 (99,	9,	18,	'fall'),
-(100,	9,	14,	'fall');
+(100,	9,	14,	'fall'),
+(102,	7,	11,	'spring'),
+(106,	7,	10,	'spring'),
+(107,	7,	12,	'spring'),
+(108,	7,	10,	'summer'),
+(109,	7,	11,	'summer'),
+(110,	7,	10,	'fall');
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
@@ -87,14 +93,15 @@ CREATE TABLE `users` (
   `address` varchar(300) NOT NULL,
   `type` varchar(20) NOT NULL,
   `reg_no` varchar(20) NOT NULL,
+  `phone_number` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `users` (`id`, `email`, `password`, `fullname`, `address`, `type`, `reg_no`) VALUES
-(1,	'admin@example.com',	'e64c7d89f26bd1972efa854d13d7dd61',	'Administrator',	'Not Specified',	'admin',	''),
-(6,	'JoseWStapleton@jourrapide.com',	'9699a3a1f55a82b15bc964dfd94d000f',	'Jose W. Stapleton',	'962 Ashcraft Court\r\nSan Diego, CA 92101',	'student',	'37938243'),
-(7,	'MatthewCCollins@rhyta.com',	'c2e1f81d34057a983ab064fa98243e2d',	'Matthew C. Collins',	'1528 Dola Mine Road\r\nCary, NC 27513',	'student',	'77751067'),
-(8,	'ChristineROakes@teleworm.us',	'90eedd85a5bf72a8fb4dda1e6bd5fe2f',	'Christine R. Oakes',	'2041 Drainer Avenue\r\nTallahassee, FL 32304',	'student',	'49842120'),
-(9,	'EdithJGantz@rhyta.com',	'1116b12a1f0cc5086968fb7338bb1738',	'Edith J. Gantz',	'4681 Sheila Lane\r\nReno, NV 89502\r\n',	'student',	'68366631');
+INSERT INTO `users` (`id`, `email`, `password`, `fullname`, `address`, `type`, `reg_no`, `phone_number`) VALUES
+(1,	'admin@example.com',	'e64c7d89f26bd1972efa854d13d7dd61',	'Administrator',	'Not Specified',	'admin',	'',	''),
+(6,	'JoseWStapleton@jourrapide.com',	'9699a3a1f55a82b15bc964dfd94d000f',	'Jose W. Stapleton',	'962 Ashcraft Court\r\nSan Diego, CA 92101',	'student',	'37938243',	''),
+(7,	'MatthewCCollins@rhyta.com',	'c2e1f81d34057a983ab064fa98243e2d',	'Matthew C. Collins',	'1528 Dola Mine Road\r\nCary, NC 27513',	'student',	'2927392',	'88978990'),
+(8,	'ChristineROakes@teleworm.us',	'90eedd85a5bf72a8fb4dda1e6bd5fe2f',	'Christine R. Oakes',	'2041 Drainer Avenue\r\nTallahassee, FL 32304',	'student',	'49842120',	''),
+(9,	'EdithJGantz@rhyta.com',	'1116b12a1f0cc5086968fb7338bb1738',	'Edith J. Gantz',	'4681 Sheila Lane\r\nReno, NV 89502\r\n',	'student',	'68366631',	'');
 
--- 2016-11-19 21:20:36
+-- 2016-12-10 20:03:22

@@ -67,6 +67,9 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
+                            <a href="student_profile.php"><i class="fa fa-logout fa-fw"></i> Profile</a>
+                        </li>
+                        <li>
                             <a href="logout.php"><i class="fa fa-logout fa-fw"></i> Logout</a>
                         </li>
                     </ul>

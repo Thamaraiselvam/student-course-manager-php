@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <?php  require './config.php'; ?>
-    <title>Student management</title>
+    <title>Revamped PAWS</title>
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 

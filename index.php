@@ -12,7 +12,7 @@ include_once 'header.php';
                     Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll">
-                    <i class="fa fa-play-circle"></i> <span class="light">Student</span> Management
+                    <i class="fa fa-play-circle"></i> <span class="light">Revamped</span> PAWS
                 </a>
             </div>
 

@@ -21,6 +21,8 @@ include_once 'student_menu.php';
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">Spring</div>
                                     <div><?php echo get_enrolled_courses_count('spring'); ?> Enrollments</div>
+                                    <div><?php 
+echo (get_enrolled_courses_count('spring')) ? ((get_enrolled_courses_count('spring') * 1800) / 100 ) * 106 ."$" : "0$"; ?> Fee</div>
                                 </div>
                             </div>
                         </div>
@@ -44,6 +46,8 @@ include_once 'student_menu.php';
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">Summer</div>
                                     <div><?php echo get_enrolled_courses_count('summer'); ?> Enrollments</div>
+                                    <div><?php 
+echo (get_enrolled_courses_count('summer')) ? ((get_enrolled_courses_count('summer') * 1800) / 100 ) * 106 ."$" : "0$"; ?> Fee</div>
                                 </div>
                             </div>
                         </div>
@@ -67,6 +71,8 @@ include_once 'student_menu.php';
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">Fall</div>
                                     <div><?php echo get_enrolled_courses_count('fall'); ?> Enrollments</div>
+                                       <div><?php 
+echo (get_enrolled_courses_count('fall')) ? ((get_enrolled_courses_count('fall') * 1800) / 100 ) * 106 ."$" : "0$"; ?> Fee</div>
                                 </div>
                             </div>
                         </div>
